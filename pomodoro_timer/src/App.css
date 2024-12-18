@@ -6,11 +6,7 @@
   color: white;
 }
 
-:root{
-  --main-color:rgb(186, 73, 73);
-  --secondary-color:rgb(235, 129, 129);
-  --navbar-color:rgb(201, 66, 66);
-}
+
 
 .pomodoroContainer {
   background-color: var(--main-color);
@@ -19,10 +15,10 @@
   align-items: center;
   justify-content: center;
 }
-
+/* 
 .active{ 
   background-color: var(--navbar-color)
-}
+} */
 .timerContainer{
   display: flex;
   flex-direction: column;
@@ -37,6 +33,24 @@
   background-color: var(--secondary-color);
   padding: 3em;
   border-radius: 5px;
+}
+
+.timerContainer.pomodoro{
+  --main-color:rgb(186, 73, 73);
+  --secondary-color:rgb(235, 129, 129);
+  --navbar-color:rgb(201, 66, 66);
+}
+
+.timerContainer.shortBreak{
+  --main-color:rgb(6, 158, 105);
+  --secondary-color:rgb(22, 184, 127);
+  --navbar-color:rgb(9, 122, 83);
+}
+
+.timerContainer.longBreak{
+  --main-color:rgb(6, 158, 105);
+  --secondary-color:rgb(22, 184, 127);
+  --navbar-color:rgb(9, 122, 83);
 }
 
 .timerContainer a{
@@ -61,19 +75,41 @@
   /* margin-right: 10px; */
   padding: .5em;
   border-radius: 7px;
+  
+}
+.timerNavContainer ul li.pomodoro{
+  background-color: var(--navbar-color);
 }
 
+.timerNavContainer ul li.shortBreak{
+  background-color: var(--navbar-color);
+}
+
+.timerNavContainer ul li.longBreak{
+  background-color: var(--navbar-color);
+}
 .roundNumber{
   margin-top: 2em;
 }
 
 .startButton{
-  padding: 1.4em 3.9em;
-  border-radius: 6px;
+  padding: 13px 23px;
+  border-radius: 8px;
   font-weight: bold;
   font-size: 20px;
   cursor: pointer;
   color: black;
+
+
+  
+font-size: 16px;
+line-height: 20px;
+font-weight: 600;
+
+
+border: 1.7px solid #222222;
+
+
 }
 
 .countdownContainer{
@@ -83,3 +119,4 @@
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
+

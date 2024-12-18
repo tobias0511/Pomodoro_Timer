@@ -1,16 +1,17 @@
 import React from "react";
 
 interface TimerNavProps{
-  currentlyPomodoro: boolean
+  currentSession: "shortBreak" | "longBreak" | "pomodoro"
 }
 
-export const TimerNav : React.FC<TimerNavProps> = ( {currentlyPomodoro} ) => {
+export const TimerNav : React.FC<TimerNavProps> = ( {currentSession} ) => {
   return (
     <div className="timerNavContainer">
         <ul>
-        <li className={currentlyPomodoro ? "active" : "passive"}>Pomodoro</li>
-        <li className={currentlyPomodoro ? "passive" : "active"}>Short Break</li>
-        <li>Long Break</li>
+        <li className={currentSession === "pomodoro" ? "pomodoro" : "" }>Pomodoro</li>
+        <li className={currentSession === "shortBreak" ? "shortBreak" : ""}>Short Break</li>
+        <li className={currentSession === "longBreak" ? "longBreak" : ""}>Long Break</li>
+        
         
         </ul>
         
