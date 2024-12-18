@@ -7,34 +7,6 @@
 }
 
 
-
-.pomodoroContainer {
-  background-color: var(--main-color);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* 
-.active{ 
-  background-color: var(--navbar-color)
-} */
-.timerContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timerWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--secondary-color);
-  padding: 3em;
-  border-radius: 5px;
-}
-
 .timerContainer.pomodoro{
   --main-color:rgb(186, 73, 73);
   --secondary-color:rgb(235, 129, 129);
@@ -52,6 +24,38 @@
   --secondary-color:rgb(22, 184, 127);
   --navbar-color:rgb(9, 122, 83);
 }
+
+/* .pomodoroContainer {
+  background-color: var(--main-color); 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+/* 
+.active{ 
+  background-color: var(--navbar-color)
+} */
+.timerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  height: 100vh;
+}
+
+.timerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  padding: 3em;
+  border-radius: 5px;
+}
+
+
 
 .timerContainer a{
   font-weight: bold;
