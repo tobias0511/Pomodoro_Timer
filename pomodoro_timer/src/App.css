@@ -105,8 +105,18 @@
   cursor: pointer;
   color: black;
 border: 1.7px solid #222222;
+transition: transform 0.5s ease;
+}
+
+.startButton:hover{
+  background-color: rgb(207, 197, 197);
+  /* transition: var(--transition); */
+}
 
 
+.startButton:active{
+  transform: translateY(5px);
+  /* transition: var(--transition); */
 }
 
 .countdownContainer{
