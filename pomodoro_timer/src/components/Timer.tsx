@@ -47,24 +47,61 @@ export const Timer = () => {
 
   useEffect(() => {
     if (pomodoroTime === 0 && session === "pomodoro") {
+      
       clearInterval(intervalId);
       round % 4 ? setSession("shortBreak") : setSession("longBreak");
+      round % 4 ? sendNotification("shortBreak") : sendNotification("longBreak") // give notification for shortBreak or longBreak
       setPomodoroTime(POMODORO_TIME);
       setActive(false);
     } else if (shortBreak === 0 && session === "shortBreak") {
+      
       clearInterval(intervalId);
       setSession("pomodoro");
+      sendNotification("pomodoro")
       setShortBreak(SHORT_BREAK);
       setActive(false);
       setRound(round + 1);
     } else if (longBreak === 0 && session === "longBreak") {
+      
       clearInterval(intervalId);
       setSession("pomodoro");
+      sendNotification("pomodoro")
       setLongBreak(LONG_BREAK);
       setActive(false);
       setRound(round + 1);
     }
   }, [pomodoroTime, shortBreak, longBreak, session, round, intervalId]);
+
+
+
+  const sendNotification = (cur_session : "pomodoro" | "shortBreak" | "longBreak") => {
+    if (Notification.permission === "granted") {
+      if (cur_session === "pomodoro"){
+        new Notification("Zeit zu arbeiten", {
+          body: `Du hast jetzt ${pomodoroTime / 60} Minuten Zeit konzentriert zu arbeiten.`,
+        });
+
+      } else if (cur_session === "shortBreak"){
+        new Notification("Zeit für eine Pause", {
+          body: `Du kannst ${shortBreak / 60} Minuten Pause machen.`,
+        });
+
+      } else if (cur_session === "longBreak") {
+        new Notification("Zeit für eine Pause", {
+          body: `Du kannst ${longBreak / 60} Minuten Pause machen.`,
+        });
+      }
+      
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          new Notification("Countdown beendet!", {
+            body: "Dein Countdown ist abgelaufen!",
+          });
+        }
+      });
+    }
+  }
 
   return (
     <div className={`timerContainer ${session}`}>
