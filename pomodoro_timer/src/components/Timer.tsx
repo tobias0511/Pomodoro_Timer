@@ -80,7 +80,7 @@ const LONG_BREAK = 0.05 * 60
       </button>
       
     </div>
-    <a className="roundNumber">#{round}</a>
+    <a className="roundNumber"># {round}</a>
   
     </div>
   );
