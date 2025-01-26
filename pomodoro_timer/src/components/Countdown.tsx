@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface CountdownProps {
   currentTime: number;
 }
 
 export const Countdown: React.FC<CountdownProps> = ({ currentTime }) => {
-  const [time, setTime] = useState<number>(1500);
-  const [isActive, setIsActive] = useState<boolean>(false);
+
 
   const convertSecondsInMins = (time: number) => {
     const mins = Math.floor(time / 60);

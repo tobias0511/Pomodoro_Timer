@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Countdown } from "./Countdown";
 import { TimerNav } from "./TimerNav";
 
@@ -7,9 +7,9 @@ export const Timer = () => {
   // let shortBreak = 5 * 60;
   // build later that i can also adjust timeframe of pomdoro
 
-  const POMODORO_TIME = 0.05 * 60;
-  const SHORT_BREAK = 0.05 * 60;
-  const LONG_BREAK = 0.05 * 60;
+  const POMODORO_TIME = 25 * 60;
+  const SHORT_BREAK = 5 * 60;
+  const LONG_BREAK = 15 * 60;
   const [intervalId, setIntervalId] = useState<number | undefined>(undefined);
   const [pomodoroTime, setPomodoroTime] = useState<number>(POMODORO_TIME);
   const [shortBreak, setShortBreak] = useState<number>(SHORT_BREAK);
